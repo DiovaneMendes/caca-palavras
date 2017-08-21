@@ -1,0 +1,23 @@
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+
+public class Principal {
+	public static void main(String arg[]) throws FileNotFoundException{
+		String[] palavra = new String[7];
+		int i = 0;
+		
+		try{
+		Scanner ler = new Scanner(new FileReader("arquivo.txt")).useDelimiter("\\||\\n");
+		}catch (FileNotFoundException e){
+			System.out.println("");
+		}
+		//for(int i=0; i<8; i++){
+		while(ler.hasNext()){
+			palavra[i] = ler.next();
+			i++;
+		}
+		
+		
+	}
+}

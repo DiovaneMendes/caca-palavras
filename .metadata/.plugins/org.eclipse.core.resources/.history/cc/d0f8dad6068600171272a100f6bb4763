@@ -1,0 +1,28 @@
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+
+public class Principal {
+	public static void main(String arg[]){
+		
+		FileReader texto = null;
+		Scanner ler = null;
+		String[] palavra = new String[7];
+		int i = 0;
+		
+		try{
+			texto = new FileReader("palavras.txt");
+			ler = new Scanner(texto).useDelimiter(";");
+		}catch (FileNotFoundException e){
+			System.out.println("OI");
+		}
+		
+		//for(int i=0; i<8; i++){
+		while(ler.hasNext()){
+			palavra[i] = ler.next();
+			i++;
+		}
+		
+		
+	}
+}

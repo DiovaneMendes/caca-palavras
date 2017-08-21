@@ -1,0 +1,22 @@
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+
+public class LeituraDeArquivo {
+
+	
+	public LeituraDeArquivo(){
+		
+	}
+	
+	public void lendoArquivo(){
+		FileReader texto = null;
+		Scanner ler = null;
+		try{
+			texto = new FileReader("coordenadas.txt");
+			ler = new Scanner(texto).useDelimiter("\n");
+		}catch (FileNotFoundException e){
+			Console.print("");
+		}
+	}
+}

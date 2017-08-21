@@ -1,0 +1,31 @@
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+
+public class LeituraDeArquivo {
+
+	
+	public LeituraDeArquivo(){
+		
+	}
+	
+	public void lendoArquivo(){
+		FileReader texto = null;
+		Scanner ler = null;
+		String[] palavra = new String[7];
+		int i = 0;
+		
+		try{
+			texto = new FileReader("palavras.txt");
+			ler = new Scanner(texto).useDelimiter("\n");
+		}catch (FileNotFoundException e){
+			System.out.println("");
+		}
+		
+		while(ler.hasNext()){
+			palavra[i] = ler.next();
+			i++;
+		}
+		
+	}
+}
