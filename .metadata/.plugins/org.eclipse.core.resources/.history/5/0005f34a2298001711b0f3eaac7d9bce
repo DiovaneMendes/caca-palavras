@@ -1,0 +1,13 @@
+
+public class Palavra {
+	String escrita;
+	
+	public Palavra(String escrita){
+		this.escrita = escrita;
+	}
+	
+	@Override
+	public String toString(){
+		return escrita;
+	}
+}

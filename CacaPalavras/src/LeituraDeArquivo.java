@@ -3,7 +3,7 @@ import java.io.FileReader;
 import java.util.Scanner;
 
 public class LeituraDeArquivo {
-
+	String palavra[] = new String[12];
 	
 	public LeituraDeArquivo(){
 		
@@ -12,7 +12,6 @@ public class LeituraDeArquivo {
 	@SuppressWarnings("resource")
 	public void lendoArquivo(){
 		Scanner ler = null;
-		String[] palavra = new String[7];
 		int i = 0;
 		
 		try{
@@ -22,8 +21,9 @@ public class LeituraDeArquivo {
 		}
 		
 		while(ler.hasNext()){
-			palavra[i] = ler.next();
-			System.out.println(palavra[i]);
+			String escrita = null;
+			escrita = ler.next();
+			palavra[i] = escrita;
 			i++;
 		}
 		

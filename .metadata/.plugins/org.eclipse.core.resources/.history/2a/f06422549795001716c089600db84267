@@ -1,0 +1,35 @@
+import java.util.Random;
+
+public class Principal {
+	public static void main(String arg[]){
+		Random gerador = new Random();
+		LeituraDeArquivo leitura = new LeituraDeArquivo();
+		leitura.lendoArquivo();
+		
+		char alfabeto[] = "abcdefghijklmnopqrstuvxwyz".toCharArray();
+		
+		char palavra[][] = new char [10][20];
+		char oi[] = new char[10];
+		
+		palavra[1][2] = 'd';
+		palavra[2][3] = 'i';
+		palavra[3][4] = 'o';
+		palavra[4][5] = 'v';
+		palavra[5][6] = 'a';
+		palavra[6][7] = 'n';
+		palavra[7][8] = 'e';
+		
+		
+		for(int i=0; i<10; i++){
+			for(int j=0; j<20; j++){
+				if(palavra[i][j]==oi[i]){
+					palavra[i][j] = alfabeto[gerador.nextInt(26)];
+				}
+				System.out.print("\n"+palavra[i][j]);
+				if(j == 19){
+					System.out.println();
+				}
+			}
+		}
+	}
+}

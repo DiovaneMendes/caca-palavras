@@ -1,0 +1,85 @@
+import java.util.Random;
+
+public class Cruzamento {
+	LeituraDeArquivo leitura = new LeituraDeArquivo();
+	String palavra[] = new String[7];
+	int apoio[] = new int[7];
+	Random gerador = new Random();
+	char matriz[][] = new char [30][80];
+	
+	public Cruzamento(){
+		
+	}
+	
+	//=========================================================================
+			
+	public void insertPalavra(){
+		//para teste ===========
+		//  LINHA e COLUNA
+		matriz[10][30] = 'd';
+		matriz[11][30] = 'i';
+		matriz[12][30] = 'o';
+		matriz[13][30] = 'v';
+		matriz[14][30] = 'a';
+		matriz[15][30] = 'n';
+		matriz[16][30] = 'e'; 	
+		
+		definiPalavra();
+		for(int i=0; i<7; i++){
+			System.out.println(palavra[i];
+		}
+
+		for(int i=0; i<7; i++){
+			for(int j=0; j<apoio[i]-1; j++){
+				char mudando[] = palavra[i].toCharArray();
+				matriz[10][30+i] = mudando[i];  
+				//System.out.println(palavra[j]+ "\n");
+			}
+		}
+		
+		/*for(int i=0; i<30; i++){
+			for(int j=0; j<80; j++){
+				if(matriz[i][j] == oi[i]){
+					matriz[i][j] = '-';//alfabeto[gerador.nextInt(26)];
+				}
+				System.out.print(matriz[i][j]);
+				if(j == 79){
+					System.out.println();
+				}
+			}
+		}*/
+	}
+	
+	//========================================================================
+	// BOTANDO LETRAS ALEATÓRIAS
+	public void letrasAleatorias(){
+		char alfabeto[] = "abcdefghijklmnopqrstuvxwyz".toCharArray();
+		char oi[] = new char[80];
+		
+		for(int i=0; i<30; i++){
+			for(int j=0; j<80; j++){
+				if(matriz[i][j] == oi[i]){
+					matriz[i][j] = '-';//alfabeto[gerador.nextInt(26)];
+				}
+				System.out.print(matriz[i][j]);
+				if(j == 79){
+					System.out.println();
+				}
+			}
+		}
+	}
+	
+	//========================================================================
+	//PUXANDO PALAVRAS DA LEITURA DE ARQUIVO 	
+	public void definiPalavra(){
+		leitura.lendoArquivo();
+		for(int i=0; i<7; i++){
+			palavra[i] = leitura.palavra[i];
+		}
+	}
+	
+	@Override
+	public String toString(){
+		return ""+palavra[0];
+	}
+}

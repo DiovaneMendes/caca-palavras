@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class Principal {
+	public static void main(String arg[]){
+		Scanner ler = new Scanner(System.in);
+		Cruzamento cruzar = new Cruzamento();
+		
+		System.out.println("JOGO - CACA PALAVRAS");
+		System.out.println("DIGITE UMA OPCAO:\n0 - SAIR\n1 - JOGO\n2 - SOLUCAO");
+		int opcao = ler.nextInt();
+		while(opcao!=0){
+			
+		}
+		cruzar.insertPalavra();
+		cruzar.letrasAleatorias();
+	}
+}

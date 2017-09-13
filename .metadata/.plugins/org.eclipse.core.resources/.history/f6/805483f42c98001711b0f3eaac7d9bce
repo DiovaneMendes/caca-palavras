@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class Principal {
+	public static void main(String arg[]){
+		Cruzamento cruzar = new Cruzamento();
+		
+		System.out.println("JOGO - CACA PALAVRAS");
+		System.out.println("DIGITE UMA OPCAO:");
+		while(){
+			
+		}
+		cruzar.insertPalavra();
+		cruzar.letrasAleatorias();
+	}
+}

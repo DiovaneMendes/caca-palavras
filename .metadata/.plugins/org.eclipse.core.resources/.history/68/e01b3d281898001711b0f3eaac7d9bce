@@ -1,0 +1,95 @@
+import java.util.Random;
+
+public class Cruzamento {
+	LeituraDeArquivo leitura = new LeituraDeArquivo();
+	String palavra[] = new String[7];
+	Random gerador = new Random();
+	char matriz[][] = new char [30][80];
+	
+	public Cruzamento(){
+		
+	}
+	
+	//=========================================================================
+			
+	public void insertPalavra(){
+		//para teste ===========
+		//  LINHA e COLUNA
+		/*matriz[10][30] = 'd';
+		matriz[11][30] = 'i';
+		matriz[12][30] = 'o';
+		matriz[13][30] = 'v';
+		matriz[14][30] = 'a';
+		matriz[15][30] = 'n';
+		matriz[16][30] = 'e'; */	
+		
+		definiPalavra();
+		for(int i=0; i<7; i++){
+			System.out.println(palavra[i]);
+		}
+
+		for(int i=0; i<7; i++){
+			int apoio = palavra[i].length();
+			char modifica[] = palavra[i].toCharArray();
+			
+			for(int j=0; j<apoio-1; j++){
+				switch(i){
+					case 0: matriz[10+j][29] = modifica[j];
+					break;
+					case 1: matriz[11][24+j] = modifica[j];
+					break;
+					//===============================================================
+					//ALGORTIMO: EM DIAGONAL E INVERTIDO ( \ ) começando pelo o 'O'
+					//case 2: matriz[18-j][47-j] = modifica[j];
+					
+					// ( / ) começando pelo o 'A'.
+					case 2: matriz[18-j][47+j] = modifica[j];
+					break;
+					//===============================================================
+					case 3: matriz[14][24+j] = modifica[j];
+					break;
+				}
+			}
+		}
+		
+		/*for(int i=0; i<30; i++){
+			for(int j=0; j<80; j++){
+				if(matriz[i][j] == oi[i]){
+					matriz[i][j] = '-';//alfabeto[gerador.nextInt(26)];
+				}
+				System.out.print(matriz[i][j]);
+				if(j == 79){
+					System.out.println();
+				}
+			}
+		}*/
+	}
+	
+	//========================================================================
+	// BOTANDO LETRAS ALEATÓRIAS
+	public void letrasAleatorias(){
+		char alfabeto[] = "abcdefghijklmnopqrstuvxwyz".toCharArray();
+		char oi[] = new char[80];
+		
+		for(int i=0; i<30; i++){
+			for(int j=0; j<80; j++){
+				if(matriz[i][j] == oi[i]){
+					matriz[i][j] = '-';//alfabeto[gerador.nextInt(26)];
+				}
+				System.out.print(matriz[i][j]);
+				if(j == 79){
+					System.out.println();
+				}
+			}
+		}
+	}
+	
+	//========================================================================
+	//PUXANDO PALAVRAS DA LEITURA DE ARQUIVO 	
+	public void definiPalavra(){
+		leitura.lendoArquivo();
+		for(int i=0; i<7; i++){
+			palavra[i] = leitura.palavra[i];
+		}
+	}
+}
