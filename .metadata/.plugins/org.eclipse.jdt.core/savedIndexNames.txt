@@ -9,8 +9,8 @@ INDEX VERSION 1.127+C:\Users\Diovane\Desktop\cacaPalavras\.metadata\.plugins\org
 2900749880.index
 3324708145.index
 2386897134.index
-4024996491.index
 3170389844.index
+4024996491.index
 2532773739.index
 3805238941.index
 1037819056.index

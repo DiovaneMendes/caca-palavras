@@ -3,8 +3,8 @@ import java.util.Random;
 public class Cruzamento {
 	private char oi[] = new char[1];
 	private String palavra[] = new String[12];
-	private char matriz[][] = new char [30][80];
-	private char matrizTwo[][] = new char [30][80];
+	private char matriz[][] = new char [30][50];
+	private char matrizTwo[][] = new char [30][50];
 	private boolean verifica = false;
 	
 	public Cruzamento(){
@@ -28,19 +28,19 @@ public class Cruzamento {
 				switch(i){
 					//===============================================================
 					//DIOVANE
-					case 0: matriz[10+j][29] = modifica[j];
+					case 0: matriz[12+j][19] = modifica[j];
 					break;
 					//===============================================================
 					//ESTAGIO
-					case 1: matriz[11][24+j] = modifica[j];
+					case 1: matriz[13][14+j] = modifica[j];
 					break;
 					//===============================================================
 					//ALGORTIMO
-					case 2: matriz[9-j][47+j] = modifica[j];
+					case 2: matriz[9-j][31+j] = modifica[j];
 					break;
 					//===============================================================
 					//PROGRAMACAO
-					case 3: matriz[14][34-j] = modifica[j];
+					case 3: matriz[16][24-j] = modifica[j];
 					break;
 					//===============================================================
 					//INFELICIDADE
@@ -52,19 +52,19 @@ public class Cruzamento {
 					break;
 					//===============================================================
 					//DEPRESSAO
-					case 6: matriz[2+j][48+j] = modifica[j];
+					case 6: matriz[2+j][32+j] = modifica[j];
 					break;
 					//===============================================================
 					//CRUZAMENTO
-					case 7: matriz[27-j][68-j] = modifica[j];
+					case 7: matriz[27-j][40-j] = modifica[j];
 					break;
 					//===============================================================
 					//ANALISE
-					case 8: matriz[25-j][62+j] = modifica[j];
+					case 8: matriz[25-j][34+j] = modifica[j];
 					break;
 					//===============================================================
 					//SISTEMA
-					case 9: matriz[16+j][63-j] = modifica[j];
+					case 9: matriz[16+j][35-j] = modifica[j];
 					break;
 					//===============================================================
 					//LEITURA
@@ -80,7 +80,7 @@ public class Cruzamento {
 
 		if( verifica == false){
 			for(int i=0; i<30; i++){
-				for(int j=0; j<80; j++){
+				for(int j=0; j<50; j++){
 					matrizTwo[i][j] = matriz[i][j];
 					verifica = true;
 				}
@@ -96,12 +96,12 @@ public class Cruzamento {
 		char alfabeto[] = "abcdefghijklmnopqrstuvxwyz".toCharArray();
 		
 		for(int i=0; i<30; i++){
-			for(int j=0; j<80; j++){
+			for(int j=0; j<50; j++){
 				if(matriz[i][j] == oi[0]){
 					matriz[i][j] = alfabeto[gerador.nextInt(26)];
 				}
-				System.out.print(matriz[i][j]);
-				if(j == 79){
+				System.out.print(matriz[i][j]+ " ");
+				if(j == 49){
 					System.out.println();
 				}
 			}
@@ -112,18 +112,31 @@ public class Cruzamento {
 	// MOSTRANDO SOLUCAO
 	public void solucao(){
 		for(int i=0; i<30; i++){
-			for(int j=0; j<80; j++){
+			for(int j=0; j<50; j++){
 				if(matrizTwo[i][j] == oi[0]){
 					matrizTwo[i][j] = '-';
 				}
-				System.out.print(matrizTwo[i][j]);
-				if(j == 79){
+				System.out.print(matrizTwo[i][j]+ " ");
+				if(j == 49){
 					System.out.println();
 				}
 			}
 		}
 	}
 	
+	//========================================================================
+	// MOSTRANDO PALAVRAS QUE DEVEM SER PROCURADAS
+	public void mostrandoPalavra(){
+		System.out.println("                               PALAVRAS QUE DEVEM SER PROCURADAS:\n");
+		definiPalavra();
+		
+		for(int i=0; i<12; i++){			
+				System.out.println("                                          " + palavra[i]);
+				if(i == 2 || i==5 || i==8){
+					System.out.println();
+				}
+		}
+	}
 	//========================================================================
 	// PUXANDO PALAVRAS DA LEITURA DE ARQUIVO 	
 	public void definiPalavra(){

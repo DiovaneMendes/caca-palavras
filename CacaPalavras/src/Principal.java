@@ -6,20 +6,23 @@ public class Principal {
 		Scanner ler = new Scanner(System.in);
 		Cruzamento cruzar = new Cruzamento();
 		
-		System.out.println("JOGO - CACA PALAVRAS");
-		System.out.println("DIGITE UMA OPCAO:\n0 - FIM\n1 - JOGAR\n2 - SOLUCAO");
+		
+		System.out.println("                                       JOGO - CACA PALAVRAS");
+		System.out.println("\nDIGITE UMA OPCAO:\n0 - FIM\n1 - PALAVRAS\n2 - JOGAR\n3 - SOLUCAO");
 		int opcao = ler.nextInt();
 		System.out.println();
 		
 		while(opcao!=0){
 			switch(opcao){
-				case 1: cruzar.insertPalavra();
+				case 1: cruzar.mostrandoPalavra();
 				break;
-				case 2: cruzar.solucao();
+				case 2: cruzar.insertPalavra();
+				break;
+				case 3: cruzar.solucao();
 				break;
 			}
 			
-			System.out.println("\nDIGITE UMA OPCAO:\n0 - FIM\n1 - JOGAR\n2 - SOLUCAO");
+			System.out.println("\nDIGITE UMA OPCAO:\n0 - FIM\n1 - PALAVRAS\n2 - JOGAR\n3 - SOLUCAO");
 			opcao = ler.nextInt();
 			System.out.println();
 		}
